@@ -14,3 +14,50 @@
 .model-image img{mix-blend-mode:normal;object-fit:contain;object-position:center center}
 .model-image.black{background:radial-gradient(circle at 50% 35%,#22232a,#07080b 72%)}
 .model-image.black img{filter:contrast(1.16) brightness(.88) saturate(1.2);-webkit-mask-image:linear-gradient(to right,transparent 1%,#000 15%,#000 78%,transparent 97%);mask-image:linear-gradient(to right,transparent 1%,#000 15%,#000 78%,transparent 97%)}
+
+/* REVISÃO 2: produtos independentes, demonstração clara, mobile com foto inteira */
+.hero .hero-value{display:block;max-width:770px;font:900 clamp(21px,2.7vw,35px)/1.15 var(--font-head);letter-spacing:.02em;font-style:normal;color:#fff;margin-top:25px;text-shadow:0 5px 14px #000a}
+.model-image,.model-image.blue,.model-image.white,.model-image.black{height:auto;aspect-ratio:2/3;background:#efeff1!important;align-items:center}
+.model-image img,.model-image.black img{display:block;height:100%;width:100%;object-fit:contain!important;object-position:center center!important;mix-blend-mode:normal!important;filter:none!important;-webkit-mask-image:none!important;mask-image:none!important}
+.model-card:hover .model-image img{transform:none}
+.model-number{color:#16171c;text-shadow:0 1px 1px #fff9;background:#ffffffe6;padding:6px 8px}
+.custom-color-note{margin-top:28px;display:grid;grid-template-columns:1fr 1.6fr auto;gap:24px;align-items:center;padding:24px 26px;border:1px solid #373b45;border-left:4px solid var(--red);background:#12151d}
+.custom-color-note strong{font:900 clamp(19px,2vw,26px)/1.1 var(--font-head);color:#fff}
+.custom-color-note p{font-size:13px;line-height:1.7;color:#b8bbc5;margin:0}
+.custom-color-note a{white-space:nowrap;font:900 15px var(--font-head);color:#ff4b54}
+.custom-section .custom-layout{align-items:start}
+.custom-copy .config-inputs{margin-top:8px}
+.config-inputs input,.config-inputs select{display:block;width:100%;margin-top:10px;border:1px solid #343841;border-radius:3px;background:#191c24;color:#fff;padding:13px;font-family:inherit;font-size:13px;outline:none}
+.config-inputs input:focus,.config-inputs select:focus{border-color:var(--red)}
+.selection-summary{background:#1d212a;border-left:3px solid var(--red);padding:12px 14px;color:#dce0e6;font-size:12px;line-height:1.6;margin:0 0 20px}
+.example-photo{margin:0;background:#14161b;border:1px solid #3e424c;overflow:hidden}
+.example-photo img{display:block;width:100%;height:auto;max-height:850px;object-fit:contain;object-position:center}
+.example-photo figcaption{padding:13px 15px;background:#07080c;font-size:10px;letter-spacing:.08em;line-height:1.4;color:#c7c9cd;font-weight:800;text-align:center}
+.placement-guide{margin-top:13px;background:#101319;border:1px solid #31353e;padding:23px}
+.placement-guide h3{font:900 24px var(--font-head);margin:0 0 12px}
+.placement-guide>div{display:flex;gap:14px;padding:12px 0;border-top:1px solid #30343c;font-size:12px;line-height:1.5;color:#b9bdc7}
+.placement-guide>div b{color:#ff505c;font:900 23px var(--font-head)}
+.placement-guide>div strong{display:block;color:#fff;font-size:13px}
+.belt-photo{margin:0;background:#eef0f4;border:1px solid #353943}
+.belt-photo img{display:block;width:100%;height:auto;max-height:460px;object-fit:contain}
+.belt-photo figcaption{background:#0b0d12;padding:12px;text-align:center;font-size:10px;font-weight:800;letter-spacing:.07em;color:#d3d5dd}
+.blackbelt .belt-maker{display:flex;width:53px;min-width:53px;height:45px;align-items:center;justify-content:center;background:#08090b;border:1px solid #eee;overflow:hidden}
+.blackbelt .belt-maker img{display:block;width:32px;height:32px;object-fit:contain}
+@media(max-width:1080px){.custom-color-note{grid-template-columns:1fr 2fr}.custom-color-note a{grid-column:1/-1}}
+@media(max-width:760px){
+ .hero{min-height:0;display:flex;flex-direction:column;align-items:stretch}
+ .hero-bg{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:71/40;background-size:contain;background-position:center;background-color:#101116;filter:none;flex-shrink:0}
+ .hero-shade{display:none}
+ .hero:before{display:none}
+ .hero-content{padding:28px 0 54px}
+ .hero h1{font-size:clamp(44px,10.9vw,70px);line-height:.95;margin:15px 0 20px}
+ .hero .hero-value{font-size:clamp(19px,5.7vw,29px);margin-top:18px;line-height:1.2}
+ .hero p{max-width:100%;font-size:13px}
+ .model-image,.model-image.blue,.model-image.white,.model-image.black{height:auto;aspect-ratio:2/3}
+ .custom-color-note{display:block;padding:21px}
+ .custom-color-note p{margin:11px 0}
+ .custom-color-note a{display:inline-block;margin-top:9px}
+ .example-photo img{max-height:none}
+ .placement-guide{padding:19px}
+ .belt-photo img{max-height:none}
+}
