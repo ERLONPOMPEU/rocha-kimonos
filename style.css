@@ -61,3 +61,12 @@
  .placement-guide{padding:19px}
  .belt-photo img{max-height:none}
 }
+
+/* Contato de segurança: Instagram oficial como segundo canal de pedidos. */
+.main-menu a[href*="instagram.com"]{color:#f3c2cc}
+.main-menu a[href*="instagram.com"]:hover{color:#fff}
+.instagram-contact{margin-top:17px;border-top:1px solid #3b3d48;padding-top:18px;display:flex;flex-direction:column;align-items:center;gap:9px}
+.instagram-contact>span{font-size:10px;letter-spacing:.1em;color:#aeb1bb;font-weight:800;text-align:center}
+.instagram-contact>a{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:12px 15px;border:1px solid #d369aa;border-radius:4px;background:linear-gradient(110deg,#29223a,#431c2b);color:#fff;font-weight:800;font-size:13px;text-align:center;transition:background .2s}
+.instagram-contact>a:hover{background:linear-gradient(110deg,#57315e,#71243c)}
+@media(max-width:760px){.contact-section .instagram-contact{margin-top:12px}}
