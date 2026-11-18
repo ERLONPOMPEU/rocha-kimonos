@@ -21,3 +21,21 @@ document.querySelectorAll('.swatch[data-type][data-value]').forEach(btn=>btn.add
 document.querySelectorAll('.js-whatsapp').forEach(link=>{link.href=makeUrl(link.dataset.message||'Olá! Quero conhecer os produtos Rocha Kimonos.')});
 if(qs('#year'))qs('#year').textContent=String(new Date().getFullYear());
 updateSelection();
+
+const photoDialog = document.querySelector('.rocha-zoom');
+if (photoDialog && typeof photoDialog.showModal === 'function') {
+  const largePhoto = photoDialog.querySelector('img');
+  document.querySelectorAll('.rocha-ampliar').forEach(link => {
+    link.addEventListener('click', event => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      largePhoto.src = link.href;
+      largePhoto.alt = link.querySelector('img').alt;
+      photoDialog.showModal();
+    });
+  });
+  photoDialog.querySelector('button').addEventListener('click', () => photoDialog.close());
+  photoDialog.addEventListener('click', event => {
+    if (event.target === photoDialog) photoDialog.close();
+  });
+}
