@@ -1,3 +1,12 @@
+// Mantém o endereço compartilhado sem o identificador de origem.
+{
+  const url = new URL(window.location.href);
+  if (url.protocol.startsWith('http') && url.searchParams.has('utm_source')) {
+    url.searchParams.delete('utm_source');
+    window.history.replaceState(window.history.state, '', url.href);
+  }
+}
+
 'use strict';
 const WHATSAPP_NUMBER='558587678264';
 const BASE_WHATSAPP='https://wa.me/'+WHATSAPP_NUMBER;
